@@ -1,0 +1,50 @@
+{
+  "name": "clb-jupyter-ext-query-params",
+  "version": "1.0.0",
+  "description": "Jupyter labextension to make query params accessible in lab",
+  "keywords": [
+    "jupyter",
+    "jupyterlab",
+    "jupyterlab-extension"
+  ],
+  "homepage": "https://gitlab.humanbrainproject.org/HumanBrainProject/jupyter-ext-query-params",
+  "bugs": {
+    "url": "https://gitlab.humanbrainproject.org/HumanBrainProject/jupyter-ext-query-params/issues"
+  },
+  "license": "Apache-2.0",
+  "author": "HBP",
+  "files": [
+    "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
+    "style/**/*.{css,eot,gif,html,jpg,json,png,svg,woff2,ttf}"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "style": "style/index.css",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.humanbrainproject.org/HumanBrainProject/jupyter-ext-query-params.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf lib tsconfig.tsbuildinfo",
+    "prepare": "jlpm run clean && jlpm run build",
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "@jupyterlab/application": "^1.0.0",
+    "@jupyterlab/apputils": "^1.2.2",
+    "@jupyterlab/coreutils": "^3.2.0",
+    "@jupyterlab/filebrowser": "^1.2.1",
+    "@jupyterlab/notebook": "1.2.2"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.1",
+    "typescript": "~3.5.2"
+  },
+  "sideEffects": [
+    "style/*.css"
+  ],
+  "jupyterlab": {
+    "extension": true
+  }
+}
