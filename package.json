@@ -1,6 +1,6 @@
 {
   "name": "clb-jupyter-ext-query-params",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Jupyter labextension to make query params accessible in lab",
   "keywords": [
     "jupyter",
