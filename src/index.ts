@@ -15,7 +15,9 @@ const extension: JupyterFrontEndPlugin<void> = {
       const searchParams = new URLSearchParams(window.location.search);
       let code = "import os\n";
       for (const [key, value] of searchParams) {
-        code += `os.environ['${key}']='${value}'\n`;
+        if (key.startsWith("LAB_")) { // only environment variables starting with LAB_ are accepted
+          code += `os.environ['${key}']='${value}'\n`;
+        }
       }
       sendKernelRequestFromNotebook(nbPanel, code, null);
     })});
