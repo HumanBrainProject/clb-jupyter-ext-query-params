@@ -57,3 +57,7 @@ jupyter lab build --minimize=False
 ```bash
 pip uninstall jupyter-ext-query-params
 ```
+
+### NPM package
+
+The NPM package can be found [here](https://www.npmjs.com/package/clb-jupyter-ext-query-params)
