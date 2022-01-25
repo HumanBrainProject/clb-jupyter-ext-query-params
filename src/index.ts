@@ -10,9 +10,9 @@ const extension: JupyterFrontEndPlugin<void> = {
     app: JupyterFrontEnd,
     tracker: INotebookTracker,
   ) => {
+    const searchParams = new URLSearchParams(window.location.search);
     tracker.widgetAdded.connect((_, nbPanel: NotebookPanel ) => {
-      nbPanel.session.ready.then(() => {
-      const searchParams = new URLSearchParams(window.location.search);
+      nbPanel.sessionContext.ready.then(() => {
       let code = "import os\n";
       for (const [key, value] of searchParams) {
         if (key.startsWith("LAB_")) { // only environment variables starting with LAB_ are accepted

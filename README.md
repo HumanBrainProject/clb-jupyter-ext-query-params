@@ -4,7 +4,7 @@ Jupyter labextension to make URL query parameters accessible via the environment
 
 ## Requirements
 
-* jupyterlab==1.2.X
+* jupyterlab==3.2.X
 
 ## Install
 

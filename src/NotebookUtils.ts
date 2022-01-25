@@ -48,9 +48,6 @@ async function sendKernelRequest(
     throw new Error('Kernel is null or undefined.');
   }
 
-  // Wait for kernel to be ready before sending request
-  await kernel.ready;
-
   const message: KernelMessage.IShellMessage = await kernel.requestExecute({
     allow_stdin: allowStdIn,
     code: runCode,
@@ -100,11 +97,10 @@ async function sendKernelRequestFromNotebook(
   }
 
   // Wait for notebook panel to be ready
-  await notebookPanel.activated;
-  await notebookPanel.session.ready;
+  await notebookPanel.sessionContext.ready;
 
   return sendKernelRequest(
-    notebookPanel.session.kernel,
+    notebookPanel.sessionContext.session.kernel,
     runCode,
     userExpressions,
     runSilent,
